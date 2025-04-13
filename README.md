@@ -77,7 +77,7 @@ CREATE TABLE cart (
 
 ```sql
 INSERT INTO users (name, email, password, is_admin)
-VALUES ('Admin User', 'admin@example.com', '$2y$10$hashedpasswordhere...', 1);
+VALUES ('Admin User', 'admin@example.com', '$2y$hashedpasswordhere...', 1);
 
 INSERT INTO books (title, author, price, quantity, image_url)
 VALUES ('Test Book', 'Test Author', 19.99, 10, 'https://example.com/test.jpg');
@@ -120,8 +120,8 @@ http://localhost/bookstore
 
 ### 🔸 For Admins:
 - Login with:
-  - Email: `admin@example.com`
-  - Password: `admin1234`
+  - Email: `admin@eg.com`
+  - Password: `admin11`
 - Access the dashboard: `admin/admin_dashboard.php`
   - Add: `admin/add_book.php`
   - Edit: `admin/edit_book.php?id=<book_id>`
