@@ -170,7 +170,4 @@ We welcome contributions! Feel free to fork the repo and submit pull requests. P
 
 ### 📚 Happy Reading & Coding! 🚀
 
----
-```
 
-Let me know if you'd like a version with markdown badges or visuals added too!
