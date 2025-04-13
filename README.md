@@ -36,8 +36,8 @@ The Online Bookstore is a web-based e-commerce application designed to provide u
    git clone  https://github.com/AB2511/WebTechbnologyLabMiniProject.git
 ## Set Up the Database:
 Create the database and tables by running the following SQL commands or importing bookstore_db.sql:
-sql
 
+<details> <summary>Click to expand SQL setup</summary>
 CREATE DATABASE bookstore_db;
 USE bookstore_db;
 
@@ -74,9 +74,9 @@ VALUES ('Admin User', 'admin@example.com', '$2y$10$9o3tTU1ZmZnpA9A9Svdg8O6LnMNFA
 -- Add a test book
 INSERT INTO books (title, author, price, quantity, image_url) 
 VALUES ('Test Book', 'Test Author', 19.99, 10, 'https://example.com/test.jpg');
+</details>
 Update db.php with your MySQL credentials:
 php
-
 $conn = new mysqli("localhost", "your_username", "your_password", "bookstore_db");
 Ensure the connection check (if ($conn->connect_error)) is active to handle errors.
 ## Configure the Web Server:
