@@ -1,0 +1,32 @@
+<?php
+session_start();
+include 'db.php';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+if (isset($_GET['book_id']) && isset($_GET['user_id'])) {
+    $book_id = $_GET['book_id'];
+    $user_id = $_GET['user_id'];
+
+    // Use prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("DELETE FROM cart WHERE user_id = ? AND book_id = ?");
+    $stmt->bind_param("ii", $user_id, $book_id);
+
+    if ($stmt->execute()) {
+        // Redirect back to cart page after removal
+        header("Location: cart.php");
+        exit;
+    } else {
+        echo "Error removing item: " . $stmt->error;
+    }
+
+    $stmt->close();
+} else {
+    echo "Invalid request.";
+}
+
+$conn->close();
+?>
